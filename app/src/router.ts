@@ -40,3 +40,5 @@ router.post("/updatepoint", (req, res) => {});
 router.put("/updatepoint", (req, res) => {});
 
 router.delete("/updatepoint/:id", (req, res) => {});
+
+export default router
