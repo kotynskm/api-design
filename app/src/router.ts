@@ -3,8 +3,10 @@ import { body, oneOf, validationResult } from "express-validator";
 import { handleInputErrors } from "./utils/middleware";
 import {
   createProduct,
+  deleteProduct,
   getAllProducts,
   getOneProduct,
+  updateProduct,
 } from "./handlers/product";
 
 const router = Router();
@@ -12,7 +14,7 @@ const router = Router();
 // product routes
 router.get("/product", getAllProducts);
 
-router.get("/product/:id", (req, res) => {});
+router.get("/product/:id", getOneProduct);
 
 router.post(
   "/product",
@@ -25,10 +27,10 @@ router.put(
   "/product/:id",
   body("name").isString(),
   handleInputErrors,
-  (req, res) => {}
+  updateProduct
 );
 
-router.delete("/product/:id", (req, res) => {});
+router.delete("/product/:id", deleteProduct);
 
 // update routes
 router.get("/update", (req, res) => {
