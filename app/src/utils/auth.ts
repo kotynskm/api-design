@@ -56,5 +56,5 @@ export const comparePasswords = (password, hashed) => {
 
 // initial hashing of password, second arg is a "salt" and increases security of password
 export const hashPassword = (password) => {
-  bcrypt.hash(password, 5);
+  return bcrypt.hash(password, 5);
 };
